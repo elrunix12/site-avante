@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresa Júnior | Sobre</title>
+  <meta name="description" content="Conheça a história, missão, visão e valores da nossa Empresa Júnior.">
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="main-content">
+    <!-- ===================== TEXTO DESCRITIVO ===================== -->
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h1 class="title has-text-centered">Sobre a Empresa Júnior</h1>
+        <div class="content has-text-justified">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt,
+            nunc nisl aliquam nisl, eget aliquam nunc nisl eget nisl. Sed euismod, nisl eget ultricies tincidunt,
+            nunc nisl aliquam nisl, eget aliquam nunc nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt,
+            nunc nisl aliquam nisl, eget aliquam nunc nisl eget nisl.
+          </p>
+          <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod,
+            nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nisl. Integer
+            posuere erat a ante venenatis dapibus posuere velit aliquet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MISSÃO / VISÃO / VALORES ===================== -->
+    <section class="section has-background-light">
+      <div class="container">
+        <div class="columns is-multiline is-centered">
+          <div class="column is-12-mobile is-6-tablet is-4-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-bullseye fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Missão</h3>
+                <p>Oferecer consultoria de excelência, conectando alunos e mercado.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12-mobile is-6-tablet is-4-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-eye fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Visão</h3>
+                <p>Ser referência em empresa júnior na região, formando líderes e impactando negócios.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12-mobile is-6-tablet is-4-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-handshake fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Valores</h3>
+                <p>Ética, inovação, comprometimento e trabalho em equipe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LINHA DO TEMPO ===================== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title has-text-centered">Nossa História</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="heading">2020</p>
+              <p>Fundação da Empresa Júnior com o objetivo de oferecer consultoria acessível.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="heading">2021</p>
+              <p>Primeiros projetos realizados e parcerias com empresas locais.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="heading">2022</p>
+              <p>Expansão da equipe e início de atividades de pesquisa.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="heading">2023</p>
+              <p>Reconhecimento regional e ampliação dos serviços.</p>
+            </div>
+          </div>
+          <!-- Adicione mais itens conforme necessário -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EQUIPE ===================== -->
+    <section class="section has-background-light" id="secao-equipe" style="display: none;">
+      <div class="container">
+        <h2 class="title has-text-centered">Nossa Equipe</h2>
+        <div id="equipe-container" class="columns is-multiline is-centered">
+          <!-- Cards de equipe serão injetados via JS -->
+        </div>
+      </div>
+    </section>
+  </div><!-- /main-content -->
+
+  <div id="footer"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/equipe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

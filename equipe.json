@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "Nome do Aluno",
+    "funcao": "Coordenador de Projetos",
+    "foto": "caminho/para/foto.jpg",
+    "linkedin": "https://linkedin.com/in/perfil",
+    "coordenador": true
+  },
+  {
+    "nome": "Outro Aluno",
+    "funcao": "Consultor",
+    "foto": "caminho/para/foto2.jpg",
+    "linkedin": "https://linkedin.com/in/outro",
+    "coordenador": false
+  }
+]

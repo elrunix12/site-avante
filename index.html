@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresa Júnior | Início</title>
+  <meta name="description" content="Empresa Júnior de Consultoria em Gestão Empresarial. Planejamento inteligente para negócios.">
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar será injetada aqui -->
+  <div id="navbar"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+
+    <!-- ===================== CARROSSEL ===================== -->
+    <section class="hero is-medium carousel-hero">
+      <div class="carousel-container">
+        <div class="carousel-slides" id="carouselSlides">
+          <!-- Slide 1 -->
+          <div class="carousel-slide is-active">
+            <figure class="image">
+              <img src="https://picsum.photos/id/1015/1200/500" alt="Imagem ilustrativa 1">
+            </figure>
+            <div class="carousel-caption">
+              <h1 class="title is-2 has-text-white">Consultoria em Gestão Empresarial</h1>
+              <p class="subtitle is-5 has-text-white">Planejamento inteligente para o seu negócio.</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <figure class="image">
+              <img src="https://picsum.photos/id/1041/1200/500" alt="Imagem ilustrativa 2">
+            </figure>
+            <div class="carousel-caption">
+              <h1 class="title is-2 has-text-white">Equipe de Alunos Qualificados</h1>
+              <p class="subtitle is-5 has-text-white">Sob supervisão de professores experientes.</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <figure class="image">
+              <img src="https://picsum.photos/id/1076/1200/500" alt="Imagem ilustrativa 3">
+            </figure>
+            <div class="carousel-caption">
+              <h1 class="title is-2 has-text-white">Soluções Acessíveis</h1>
+              <p class="subtitle is-5 has-text-white">Custo-benefício para pequenas e médias empresas.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Setas de navegação -->
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+        <!-- Indicadores -->
+        <div class="carousel-indicators" id="carouselIndicators">
+          <span class="indicator is-active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CARDS ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline is-centered">
+          <div class="column is-12-mobile is-6-tablet is-3-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-bullseye fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Missão</h3>
+                <p>Oferecer consultoria de excelência, conectando alunos e mercado.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12-mobile is-6-tablet is-3-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-chart-line fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Serviços</h3>
+                <p>Planejamento estratégico, gestão financeira e mais.</p>
+                <a href="servicos.html" class="button is-primary is-small mt-2">Saiba mais</a>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12-mobile is-6-tablet is-3-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-graduation-cap fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Diferenciais</h3>
+                <p>Alunos supervisionados por professores, inovação e preço justo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12-mobile is-6-tablet is-3-desktop">
+            <div class="card info-card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-envelope fa-2x"></i>
+                </span>
+                <h3 class="title is-5 mt-3">Contato</h3>
+                <p>Entre em contato para solicitar uma proposta.</p>
+                <a href="#" id="linkFormularioCard" class="button is-primary is-small mt-2" target="_blank">Formulário</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NOTÍCIAS ===================== -->
+    <section class="section has-background-light">
+      <div class="container">
+        <h2 class="title has-text-centered">Últimas Notícias</h2>
+        <div id="noticias-lista" class="columns is-multiline">
+          <!-- As notícias serão renderizadas aqui via JS -->
+        </div>
+        <nav id="paginacao" class="pagination is-centered" role="navigation" aria-label="pagination"></nav>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="section">
+      <div class="container has-text-centered">
+        <h2 class="title">Fale Conosco</h2>
+        <p class="subtitle">Utilize nosso formulário ou nossas redes sociais para entrar em contato.</p>
+        <div class="buttons is-centered">
+          <a href="#" id="linkFormularioContato" class="button is-primary is-medium" target="_blank">
+            <span class="icon"><i class="fas fa-clipboard-list"></i></span>
+            <span>Formulário de Contato</span>
+          </a>
+          <a href="#" id="linkInstagram" class="button is-medium" target="_blank">
+            <span class="icon"><i class="fab fa-instagram"></i></span>
+            <span>Instagram</span>
+          </a>
+          <a href="#" id="linkLinkedin" class="button is-medium" target="_blank">
+            <span class="icon"><i class="fab fa-linkedin"></i></span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /main-content -->
+
+  <!-- Rodapé será injetado aqui -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/global.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

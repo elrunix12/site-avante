@@ -1,0 +1,62 @@
+[
+  {
+    "titulo": "Empresa Júnior conquista prêmio de inovação",
+    "data": "2025-03-15",
+    "resumo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "link": "noticias/2025-03-15-premio-inovacao.html"
+  },
+  {
+    "titulo": "Parceria com a empresa Alpha",
+    "data": "2025-03-10",
+    "resumo": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "link": "noticias/2025-03-10-parceria-alpha.html"
+  },
+  {
+    "titulo": "Workshop sobre planejamento estratégico",
+    "data": "2025-02-28",
+    "resumo": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "link": "noticias/2025-02-28-workshop-planejamento.html"
+  },
+  {
+    "titulo": "Processo seletivo para novos membros",
+    "data": "2025-02-20",
+    "resumo": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "link": "noticias/2025-02-20-processo-seletivo.html"
+  },
+  {
+    "titulo": "Resultados do projeto com a empresa Beta",
+    "data": "2025-02-15",
+    "resumo": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    "link": "noticias/2025-02-15-resultados-beta.html"
+  },
+  {
+    "titulo": "Palestra sobre gestão financeira",
+    "data": "2025-02-01",
+    "resumo": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.",
+    "link": "noticias/2025-02-01-palestra-financeira.html"
+  },
+  {
+    "titulo": "Empresa Júnior participa de congresso regional",
+    "data": "2025-01-25",
+    "resumo": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+    "link": "noticias/2025-01-25-congresso-regional.html"
+  },
+  {
+    "titulo": "Novo serviço: pesquisa de mercado",
+    "data": "2025-01-18",
+    "resumo": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+    "link": "noticias/2025-01-18-novo-servico-pesquisa.html"
+  },
+  {
+    "titulo": "Capacitação interna em marketing digital",
+    "data": "2025-01-10",
+    "resumo": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
+    "link": "noticias/2025-01-10-capacitacao-marketing.html"
+  },
+  {
+    "titulo": "Confira nosso relatório anual",
+    "data": "2024-12-20",
+    "resumo": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.",
+    "link": "noticias/2024-12-20-relatorio-anual.html"
+  }
+]
