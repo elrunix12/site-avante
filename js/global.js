@@ -102,7 +102,7 @@ function injectFooter() {
           <a href="${prefix}servicos.html">Serviços</a>
         </p>
         <p class="has-text-centered" style="margin-top: 15px; opacity: 0.8;">
-          © ${new Date().getFullYear()} Empresa Júnior. Todos os direitos reservados.
+          © ${new Date().getFullYear()} AVANTE CONSULTORIA - Empresa Júnior. Todos os direitos reservados.
         </p>
       </div>
     </footer>

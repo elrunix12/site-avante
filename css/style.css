@@ -416,3 +416,8 @@ a:focus-visible,
 .main-content {
   flex: 1;
 }
+
+/* Evita barra de rolagem horizontal em qualquer lugar */
+body {
+  overflow-x: hidden;
+}
