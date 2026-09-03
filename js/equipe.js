@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <img src="${foto}" alt="Foto de ${membro.nome}">
           </figure>
           ${badge}
-          <h3 class="title is-6 mb-1">${membro.nome}</h3>
+          <h3 class="title is-6 is-spaced">${membro.nome}</h3>
           <p class="subtitle is-6 has-text-grey mb-1">${membro.funcao}</p>
           ${linkedinHtml}
         </div>

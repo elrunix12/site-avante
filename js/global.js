@@ -7,16 +7,15 @@
 
 // Configurações centrais - edite os links abaixo
 const CONFIG = {
-  formularioUrl: "#",   // Coloque aqui o link do Google Forms
-  instagramUrl: "#",    // Coloque o link do Instagram
-  linkedinUrl: "#"      // Coloque o link do LinkedIn
+  formularioUrl: "#",
+  instagramUrl: "#",
+  linkedinUrl: "#",
+  email: "avanteconsultjr@gmail.com"
 };
 
 // Função para detectar se estamos em uma subpasta (ex: /noticias/)
 function getPrefix() {
   const path = window.location.pathname;
-  // Se a URL contiver "/noticias/" ou terminar com "/noticias/", retorna "../"
-  // Caso contrário, retorna "./" (ou apenas "")
   if (path.includes('/noticias/') || path.endsWith('/noticias/')) {
     return '../';
   }
@@ -29,8 +28,6 @@ function injectNavbar() {
   if (!navbarContainer) return;
 
   const prefix = getPrefix();
-
-  // Determina qual página está ativa
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
   const navbarHTML = `
@@ -64,7 +61,6 @@ function injectNavbar() {
 
   navbarContainer.innerHTML = navbarHTML;
 
-  // Ativa o menu hambúrguer no mobile
   const burger = navbarContainer.querySelector('.navbar-burger');
   const menu = navbarContainer.querySelector('#navbarMenu');
   if (burger && menu) {
@@ -96,11 +92,19 @@ function injectFooter() {
             <i class="fas fa-clipboard-list"></i>
           </a>
         </div>
+
         <p class="has-text-centered">
           <a href="${prefix}index.html">Início</a> &nbsp;|&nbsp;
           <a href="${prefix}sobre.html">Sobre</a> &nbsp;|&nbsp;
           <a href="${prefix}servicos.html">Serviços</a>
         </p>
+
+        <p class="has-text-centered" style="margin-top: 8px;">
+          <a href="mailto:${CONFIG.email}" style="color: inherit; text-decoration: underline;">
+            ${CONFIG.email}
+          </a>
+        </p>
+
         <p class="has-text-centered" style="margin-top: 15px; opacity: 0.8;">
           © ${new Date().getFullYear()} AVANTE CONSULTORIA - Empresa Júnior. Todos os direitos reservados.
         </p>
