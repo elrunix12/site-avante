@@ -56,6 +56,19 @@ a:focus-visible,
   background-color: var(--primary-color) !important;
 }
 
+/* Classe utilitária para esconder visualmente, mas manter para leitores de tela */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* ============================================
    NAVBAR
    ============================================ */
@@ -87,7 +100,7 @@ a:focus-visible,
 .carousel-container {
   position: relative;
   width: 100%;
-  max-height: 500px;
+  overflow: hidden;
 }
 .carousel-slides {
   position: relative;
@@ -106,29 +119,32 @@ a:focus-visible,
 }
 .carousel-slide img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: auto; /* altura automática no mobile */
+  display: block;
 }
 .carousel-caption {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 2rem 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  text-align: left;
+  z-index: 5;
 }
 .carousel-caption h1,
 .carousel-caption p {
   margin: 0;
   color: var(--white);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -137,10 +153,17 @@ a:focus-visible,
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  transition: background 0.3s;
+  transition: background 0.3s, opacity 0.3s, transform 0.2s;
+  backdrop-filter: blur(5px);
+  opacity: 0.6;
+  z-index: 10;
+}
+.carousel-container:hover .carousel-btn {
+  opacity: 1;
 }
 .carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.08);
 }
 .carousel-btn.prev {
   left: 20px;
@@ -150,11 +173,12 @@ a:focus-visible,
 }
 .carousel-indicators {
   position: absolute;
-  bottom: 15px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
+  z-index: 10;
 }
 .indicator {
   width: 12px;
@@ -162,6 +186,15 @@ a:focus-visible,
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
+  position: relative;
+}
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
 }
 .indicator.is-active {
   background: var(--white);
@@ -175,23 +208,22 @@ a:focus-visible,
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .info-card .card-content {
   flex: 1;
-  /* Ajuste simétrico: topo com 1.25rem, laterais 1.5rem, inferior 0.75rem */
   padding: 1.25rem 1.5rem 0.75rem;
 }
 
 .info-card .card-footer {
   border-top: none;
   background-color: transparent;
-  /* Ajuste simétrico: topo 0.75rem, laterais 1.5rem, inferior 1.25rem */
   padding: 0.75rem 1.5rem 1.25rem;
 }
 
 .info-card .card-footer-item {
-  padding: 0; /* Remove o padding padrão do item para evitar deslocamento */
+  padding: 0;
 }
 
 /* ============================================
@@ -243,10 +275,11 @@ a:focus-visible,
    NOTÍCIAS E PAGINAÇÃO
    ============================================ */
 .noticia-card {
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .noticia-card:hover {
   transform: translateY(-5px);
@@ -267,7 +300,8 @@ a:focus-visible,
    ============================================ */
 .service-card {
   height: 100%;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .service-card:hover {
   transform: translateY(-5px);
@@ -318,7 +352,8 @@ a:focus-visible,
    ============================================ */
 .etapa-card {
   height: 100%;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .etapa-card:hover {
   transform: translateY(-5px);
@@ -382,23 +417,49 @@ a:focus-visible,
   .title.is-2 {
     font-size: 1.8rem;
   }
+
   /* Carrossel */
+  .carousel-container {
+    height: auto; /* altura automática no mobile */
+    border-radius: 0;
+  }
   .carousel-caption {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    padding: 10px;
+    padding: 1rem 1rem 0.75rem;
   }
   .carousel-caption h1.title {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .carousel-caption p.subtitle {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .carousel-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
+    display: none; /* setas escondidas no mobile */
+  }
+  .carousel-indicators {
+    bottom: 15px;
+  }
+
+  /* Menu mobile: aumenta espaçamento dos itens */
+  .navbar-menu.is-active .navbar-item {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Paginação: ajusta espaçamento e quebra de linha */
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .pagination-previous,
+  .pagination-next,
+  .pagination-list {
+    margin: 0;
+  }
+  .pagination-list {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 0.25rem;
   }
 }
 
@@ -412,13 +473,19 @@ a:focus-visible,
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  .carousel-hero {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
+
+  /* Carrossel full width com altura fixa */
   .carousel-container {
-    border-radius: 8px;
-    overflow: hidden;
+    height: 500px;
+    border-radius: 0;
+  }
+  .carousel-slides,
+  .carousel-slide {
+    height: 100%; /* garante cadeia de alturas */
+  }
+  .carousel-slide img {
+    height: 100%; /* imagem preenche altura fixa */
+    object-fit: cover; /* cobre o container, cortando se necessário */
   }
 }
 

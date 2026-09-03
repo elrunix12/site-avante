@@ -32,7 +32,7 @@ function renderizarNoticias(pagina) {
           <p>${noticia.resumo}</p>
         </div>
         <footer class="card-footer">
-          <a href="${noticia.link}" class="card-footer-item">Leia mais</a>
+          <a href="${noticia.link}" class="card-footer-item" aria-label="Leia mais sobre ${noticia.titulo}">Leia mais</a>
         </footer>
       </div>
     `;

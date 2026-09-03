@@ -10,7 +10,7 @@ const CONFIG = {
   formularioUrl: "#",
   instagramUrl: "#",
   linkedinUrl: "#",
-  email: "avanteconsultjr@gmail.com"
+  email: "a@gmail.com"
 };
 
 // Função para detectar se estamos em uma subpasta (ex: /noticias/)
@@ -82,13 +82,13 @@ function injectFooter() {
     <footer class="footer-custom">
       <div class="container">
         <div class="social-icons">
-          <a href="${CONFIG.instagramUrl}" target="_blank" aria-label="Instagram">
+          <a href="${CONFIG.instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="${CONFIG.linkedinUrl}" target="_blank" aria-label="LinkedIn">
+          <a href="${CONFIG.linkedinUrl}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="${CONFIG.formularioUrl}" target="_blank" aria-label="Formulário de contato">
+          <a href="${CONFIG.formularioUrl}" target="_blank" rel="noopener noreferrer" aria-label="Formulário de contato">
             <i class="fas fa-clipboard-list"></i>
           </a>
         </div>

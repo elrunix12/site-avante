@@ -15,11 +15,11 @@
 <body>
   <div id="navbar"></div>
 
-  <div class="main-content">
+  <main class="main-content">
     <!-- ===================== TEXTO DESCRITIVO ===================== -->
-    <section class="section">
+    <section class="section" aria-labelledby="titulo-sobre">
       <div class="container" style="max-width: 800px;">
-        <h1 class="title has-text-centered">Sobre a Empresa Júnior</h1>
+        <h1 id="titulo-sobre" class="title has-text-centered">Sobre a Empresa Júnior</h1>
         <div class="content has-text-justified">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt,
@@ -37,8 +37,9 @@
     </section>
 
     <!-- ===================== MISSÃO / VISÃO / VALORES ===================== -->
-    <section class="section has-background-light">
+    <section class="section has-background-light" aria-labelledby="titulo-mvv">
       <div class="container">
+        <h2 id="titulo-mvv" class="title has-text-centered visually-hidden">Missão, Visão e Valores</h2>
         <div class="columns is-multiline is-centered">
           <div class="column is-12-mobile is-6-tablet is-4-desktop">
             <div class="card info-card">
@@ -78,9 +79,9 @@
     </section>
 
     <!-- ===================== LINHA DO TEMPO ===================== -->
-    <section class="section">
+    <section class="section" aria-labelledby="titulo-historia">
       <div class="container">
-        <h2 class="title has-text-centered">Nossa História</h2>
+        <h2 id="titulo-historia" class="title has-text-centered">Nossa História</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-marker"></div>
@@ -116,15 +117,15 @@
     </section>
 
     <!-- ===================== EQUIPE ===================== -->
-    <section class="section has-background-light" id="secao-equipe" style="display: none;">
+    <section class="section has-background-light" id="secao-equipe" style="display: none;" aria-labelledby="titulo-equipe">
       <div class="container">
-        <h2 class="title has-text-centered">Nossa Equipe</h2>
+        <h2 id="titulo-equipe" class="title has-text-centered">Nossa Equipe</h2>
         <div id="equipe-container" class="columns is-multiline is-centered">
           <!-- Cards de equipe serão injetados via JS -->
         </div>
       </div>
     </section>
-  </div><!-- /main-content -->
+  </main><!-- /main-content -->
 
   <div id="footer"></div>
 
