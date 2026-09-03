@@ -10,7 +10,7 @@ const CONFIG = {
   formularioUrl: "#",
   instagramUrl: "#",
   linkedinUrl: "#",
-  email: "a@gmail.com"
+  email: "avanteconsultjr@gmail.com"
 };
 
 // Função para detectar se estamos em uma subpasta (ex: /noticias/)
