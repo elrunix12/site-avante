@@ -3,6 +3,7 @@
    ============================================
    Este arquivo contém:
    - Lógica do carrossel (troca de slides, indicadores, autoplay)
+   - Suporte a gestos de arrasto (swipe) no carrossel
    - Atualização dos links de formulário e redes sociais
    ============================================ */
 
@@ -13,16 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const carousel = document.querySelector('.carousel-container');
+  const slidesContainer = document.getElementById('carouselSlides');
 
   if (slides.length > 0) {
     let currentSlide = 0;
     let autoplayInterval = null;
 
     function showSlide(index) {
-      // Remove 'is-active' de todos os slides
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('is-active', i === index);
-      });
+      // Move o container de slides para exibir o slide desejado
+      if (slidesContainer) {
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+      }
 
       // Atualiza indicadores
       indicators.forEach((ind, i) => {
@@ -68,6 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Suporte a gestos de arrasto (swipe) no carrossel
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (carousel) {
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        const threshold = 50;
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+          resetAutoplay();
+        }
+      }, { passive: true });
+    }
+
     // Autoplay (5 segundos)
     function startAutoplay() {
       if (autoplayInterval) clearInterval(autoplayInterval);
@@ -88,14 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Inicia autoplay
+    // Inicializa o primeiro slide (posição inicial)
+    showSlide(0);
     startAutoplay();
   }
 
   // ===================== LINKS DE CONTATO =====================
-  // Atualiza os hrefs dos botões de formulário e redes sociais
-  // usando as URLs definidas no arquivo global.js (CONFIG)
-
   const linkFormularioCard = document.getElementById('linkFormularioCard');
   const linkFormularioContato = document.getElementById('linkFormularioContato');
   const linkInstagram = document.getElementById('linkInstagram');

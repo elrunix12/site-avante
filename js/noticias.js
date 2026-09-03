@@ -5,7 +5,7 @@
    e renderiza na página inicial com paginação.
    ============================================ */
 
-const NOTICIAS_POR_PAGINA = 3;
+const NOTICIAS_POR_PAGINA = 4; // alterado de 3 para 4
 let paginaAtual = 1;
 let noticias = []; // será preenchida com o JSON
 
@@ -22,7 +22,8 @@ function renderizarNoticias(pagina) {
 
   noticiasPagina.forEach(noticia => {
     const col = document.createElement('div');
-    col.className = 'column is-12-mobile is-6-tablet is-4-desktop';
+    // Alterado is-4-desktop para is-3-desktop para caber 4 colunas por linha no desktop
+    col.className = 'column is-12-mobile is-6-tablet is-3-desktop';
 
     col.innerHTML = `
       <div class="card noticia-card">
